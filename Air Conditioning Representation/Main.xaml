@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1209,827" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1208,837" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
       <x:String>System.Activities</x:String>
@@ -113,7 +113,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <ui:InputDialog Options="{x:Null}" sap2010:Annotation.AnnotationText="Gets the desired temperature value from user. &#xD;&#xA;&#xD;&#xA;If the user does not provide a numeric value, the process will terminate." DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="725,363" sap2010:WorkflowViewState.IdRef="InputDialog_14" IsPassword="False" Label="Enter your desired temperature or click 'OK' to Turn OFF the AC." OptionsString="Turn OFF" Title="[&quot;Hello! Room temperature is now &quot; + StrCurrentTemperature +&quot;°C.&quot;]">
+            <ui:InputDialog Options="{x:Null}" sap2010:Annotation.AnnotationText="Gets the desired temperature value from user. &#xA;&#xA;If the user does not provide a numeric value, the process will terminate." DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="725,363" sap2010:WorkflowViewState.IdRef="InputDialog_14" IsPassword="False" Label="Enter your desired temperature or click 'OK' to Turn OFF the AC." OptionsString="Turn OFF" Title="[&quot;Hello! Room temperature is now &quot; + StrCurrentTemperature +&quot;°C.&quot;]">
               <ui:InputDialog.Result>
                 <OutArgument x:TypeArguments="x:String">[StrDesiredTemperature]</OutArgument>
               </ui:InputDialog.Result>
@@ -123,7 +123,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:InputDialog>
-            <If sap2010:Annotation.AnnotationText="Checks if the input provided by the user can be converted to the Double type. &#xD;&#xA;&#xD;&#xA;If True, the process continues. If False, the process terminates. " Condition="[Double.TryParse(StrDesiredTemperature,0)]" sap:VirtualizedContainerService.HintSize="725,570" sap2010:WorkflowViewState.IdRef="If_20">
+            <If sap2010:Annotation.AnnotationText="Checks if the input provided by the user can be converted to the Double type. &#xA;&#xA;If True, the process continues. If False, the process terminates. " Condition="[Double.TryParse(StrDesiredTemperature,0)]" sap:VirtualizedContainerService.HintSize="725,570" sap2010:WorkflowViewState.IdRef="If_20">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -231,7 +231,7 @@
             </Transition.To>
             <Transition.Condition>[TurnOFF]</Transition.Condition>
           </Transition>
-          <Transition sap2010:Annotation.AnnotationText="This transition to the Heat State is triggered if the adjusted desired temperature is higher than the current temperature.&#xD;&#xA;" DisplayName="New&gt;Current" sap:VirtualizedContainerService.HintSize="450,562" sap2010:WorkflowViewState.IdRef="Transition_8">
+          <Transition sap2010:Annotation.AnnotationText="This transition to the Heat State is triggered if the adjusted desired temperature is higher than the current temperature.&#xA;" DisplayName="New&gt;Current" sap:VirtualizedContainerService.HintSize="450,562" sap2010:WorkflowViewState.IdRef="Transition_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:PointCollection x:Key="ConnectorLocation">312.333333333333,153.866666666667 282.333333333333,153.866666666667 282.333333333333,109.333333333333 130.3,109.333333333333 130.3,139.333333333333</av:PointCollection>
@@ -249,7 +249,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap2010:Annotation.AnnotationText="Assigns the desired higher temperature to the current temperature.&#xD;&#xA;" sap:VirtualizedContainerService.HintSize="334,117" sap2010:WorkflowViewState.IdRef="Assign_32">
+                    <Assign sap2010:Annotation.AnnotationText="Assigns the desired higher temperature to the current temperature.&#xA;" sap:VirtualizedContainerService.HintSize="334,117" sap2010:WorkflowViewState.IdRef="Assign_32">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Double">[DblCurrentTemperature]</OutArgument>
                       </Assign.To>
@@ -379,7 +379,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <State.Transitions>
-                  <Transition sap2010:Annotation.AnnotationText="Transitions to the Idle state based on the value of the Idle flag. &#xD;&#xA;" DisplayName="Temp reached" sap:VirtualizedContainerService.HintSize="450,547" sap2010:WorkflowViewState.IdRef="Transition_18">
+                  <Transition sap2010:Annotation.AnnotationText="Transitions to the Idle state based on the value of the Idle flag. &#xA;" DisplayName="Temp reached" sap:VirtualizedContainerService.HintSize="450,547" sap2010:WorkflowViewState.IdRef="Transition_18">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:PointCollection x:Key="ConnectorLocation">137,292.266666666666 373.233333333333,292.266666666666 373.233333333333,190.666666666667</av:PointCollection>
@@ -434,6 +434,15 @@
       </State>
       <x:Reference>__ReferenceID2</x:Reference>
       <x:Reference>__ReferenceID3</x:Reference>
+      <State DisplayName="Test State" sap:VirtualizedContainerService.HintSize="134,61" sap2010:WorkflowViewState.IdRef="State_8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">243,369.5</av:Point>
+            <av:Size x:Key="ShapeSize">134,61</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </State>
       <StateMachine.Variables>
         <Variable x:TypeArguments="x:String" Name="StrDesiredTemperature" />
         <Variable x:TypeArguments="x:Boolean" Default="False" Name="Idle" />

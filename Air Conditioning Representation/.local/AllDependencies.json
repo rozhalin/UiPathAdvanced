@@ -1575,7 +1575,7 @@
         }
       }
     },
-    ".NETFramework,Version=v4.6.1/win7-x86": {
+    ".NETFramework,Version=v4.6.1/win10-x64": {
       "ClosedXML/0.87.1": {
         "type": "package",
         "dependencies": {
@@ -5013,15 +5013,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\nuget": {}
+    "C:\\Users\\rozro\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "AirConditioning_Representation",
       "projectName": "AirConditioning_Representation",
-      "projectPath": "C:\\Users\\calin.grigorescu\\Documents\\Projects\\2021\\20.10 RPA Developer Redesign\\State Machine\\AC2\\AirConditioning_Representation\\.local",
-      "packagesPath": "C:\\nuget",
-      "outputPath": "C:\\Users\\calin.grigorescu\\Documents\\Projects\\2021\\20.10 RPA Developer Redesign\\State Machine\\AC2\\AirConditioning_Representation\\.local"
+      "projectPath": "D:\\repos\\UiPathAdvanced\\Air Conditioning Representation\\.local",
+      "packagesPath": "C:\\Users\\rozro\\.nuget\\packages\\",
+      "outputPath": "D:\\repos\\UiPathAdvanced\\Air Conditioning Representation\\.local"
     },
     "frameworks": {
       "net461": {
@@ -5047,7 +5047,12 @@
             "version": "[21.4.4, 21.4.4]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\calin.grigorescu\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\rozro\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+      }
+    },
+    "runtimes": {
+      "win10-x64": {
+        "#import": []
       }
     }
   }
