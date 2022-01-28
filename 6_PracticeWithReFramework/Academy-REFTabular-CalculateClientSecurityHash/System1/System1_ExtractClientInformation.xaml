@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,2241</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1164,2241</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>System1_ExtractClientInformation_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
@@ -42,7 +42,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="19">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="38">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -62,6 +62,13 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="System1_ExtractClientInformation" sap:VirtualizedContainerService.HintSize="709,2176" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -101,7 +108,7 @@
                 </ui:Target>
               </ui:GetAttribute.Target>
             </ui:GetAttribute>
-            <ui:Matches BuilderPattern="(?&lt;=Client\sID:\s).*(?=\s)" DisplayName="Matches Client ID" sap:VirtualizedContainerService.HintSize="591,59" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[str_innerText]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=Client\\sID:\\s).*(?=\\s)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Client\sID:\s).*(?=\s)" RegexOption="IgnoreCase, Compiled" Result="[ie_matches]" />
+            <ui:Matches BuilderPattern="(?&lt;=Client\sID:\s)\S*(?=\s)" DisplayName="Matches Client ID" sap:VirtualizedContainerService.HintSize="591,59" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[str_innerText]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=Client\\sID:\\s)\\S*(?=\\s)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Client\sID:\s)\S*(?=\s)" RegexOption="IgnoreCase, Compiled" Result="[ie_matches]" />
             <If Condition="[ie_matches.Count &gt;0]" DisplayName="If ie_matches.Count &gt;0" sap:VirtualizedContainerService.HintSize="591,409" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <Sequence DisplayName="ie_matches.Count &gt;0" sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_3">
@@ -139,7 +146,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <ui:Matches BuilderPattern="(?&lt;=Client\sID:\s).*(?=\s)" DisplayName="Matches Client ID" sap:VirtualizedContainerService.HintSize="591,59" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[str_innerText]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=Client\\sID:\\s).*(?=\\s)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Client\sName:\s).*(?=\s)" RegexOption="IgnoreCase, Compiled" Result="[ie_matches]" />
+            <ui:Matches BuilderPattern="(?&lt;=Client\sName:\s).*(?=Client\sCountry)" DisplayName="Matches Client ID" sap:VirtualizedContainerService.HintSize="591,59" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[str_innerText]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=Client\\sName:\\s).*(?=Client\\sCountry)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Client\sName:\s).*(?=Client\sCountry)" RegexOption="IgnoreCase, Compiled" Result="[ie_matches]" />
             <If Condition="[ie_matches.Count &gt;0]" DisplayName="If ie_matches.Count &gt;0" sap:VirtualizedContainerService.HintSize="591,409" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
                 <Sequence DisplayName="ie_matches.Count &gt;0" sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_5">
@@ -153,7 +160,7 @@
                       <OutArgument x:TypeArguments="x:String">[out_ClientName]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[ie_matches(0).ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String">[ie_matches(0).ToString.Trim]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign DisplayName="Set ie_matches = Nothing" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
@@ -177,7 +184,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <ui:Matches BuilderPattern="(?&lt;=Client\sID:\s).*(?=\s)" DisplayName="Matches Client ID" sap:VirtualizedContainerService.HintSize="591,59" sap2010:WorkflowViewState.IdRef="Matches_3" Input="[str_innerText]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=Client\\sID:\\s).*(?=\\s)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Client\sCountry:\s).*(?=\s?)" RegexOption="IgnoreCase, Compiled" Result="[ie_matches]" />
+            <ui:Matches BuilderPattern="(?&lt;=Client\sCountry:\s).*" DisplayName="Matches Client ID" sap:VirtualizedContainerService.HintSize="591,59" sap2010:WorkflowViewState.IdRef="Matches_3" Input="[str_innerText]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=Client\\sCountry:\\s).*&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=Client\sCountry:\s).*" RegexOption="IgnoreCase, Compiled" Result="[ie_matches]" />
             <If Condition="[ie_matches.Count &gt;0]" DisplayName="If ie_matches.Count &gt;0" sap:VirtualizedContainerService.HintSize="591,409" sap2010:WorkflowViewState.IdRef="If_3">
               <If.Then>
                 <Sequence DisplayName="ie_matches.Count &gt;0" sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_7">
@@ -191,7 +198,7 @@
                       <OutArgument x:TypeArguments="x:String">[out_ClientCountry]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[ie_matches(0).ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String">[ie_matches(0).ToString.Trim]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign DisplayName="Set ie_matches = Nothing" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">

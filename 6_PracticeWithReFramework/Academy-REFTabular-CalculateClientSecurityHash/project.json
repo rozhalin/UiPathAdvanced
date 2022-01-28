@@ -3,7 +3,9 @@
   "description": "Calculate Client Security Hash",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.Credentials.Activities": "[2.0.0]",
     "UiPath.Excel.Activities": "[2.11.4]",
+    "UiPath.Mail.Activities": "[1.13.1-preview]",
     "UiPath.System.Activities": "[21.10.3]",
     "UiPath.Testing.Activities": "[1.4.4]",
     "UiPath.UIAutomation.Activities": "[21.10.4]"
