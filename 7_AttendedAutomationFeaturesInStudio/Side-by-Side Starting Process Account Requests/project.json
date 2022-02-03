@@ -1,0 +1,78 @@
+{
+  "name": "Process ACME Account Requests",
+  "description": "Description: This process logs into ACME, downloads the New Registrants Excel file, enters the data in the ACME New Account form and sends an Email with the execution report. \r\n\r\nPreconditions: \r\n- Chrome and Outlook are available.\r\n- The data is clean. \r\n\r\nInputs: \r\n- Chrome Downloads folder path.\r\n- Working Folder\r\n- ACME Credentials\r\n\r\nOutput:\r\n- Execution report",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.Excel.Activities": "[2.9.3]",
+    "UiPath.Mail.Activities": "[1.9.3]",
+    "UiPath.System.Activities": "[20.10.1]",
+    "UiPath.UIAutomation.Activities": "[20.10.6]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "20.10.2.0",
+  "projectVersion": "1.0.3",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "modernBehavior": false
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "3f94f26a-5de2-470f-a32b-53eba6bf0434",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "GetUserInput.xaml",
+      "uniqueId": "d30bbdb0-84af-4980-9fd4-17e07e6b5aa1",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "LogIntoACME.xaml",
+      "uniqueId": "2feb0e10-0e7b-4151-876a-19c5640a087f",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "DownloadNewRegistrantsExcelFile.xaml",
+      "uniqueId": "4a7ddc4f-d6f6-4ed8-b0be-3ae59db550a8",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "RegisterNewAccounts.xaml",
+      "uniqueId": "99ba616f-1caf-4c44-ba15-f6e58e418ddf",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {}
+}
