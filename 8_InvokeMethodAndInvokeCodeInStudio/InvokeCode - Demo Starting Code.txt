@@ -1,0 +1,23 @@
+Private Sub SHA1EncryptData()
+
+Dim FilePath As String = "Report-DE763212-1.xlsx"
+Dim Result As String = ""
+Dim Encryptor As New System.Security.Cryptography.SHA256CryptoServiceProvider
+ 
+' Create a fileStream For the file.
+Dim fileStream As FileStream = File.OpenRead(FilePath)
+' Be sure it's positioned to the beginning of the stream.
+fileStream.Position = 0
+
+' Compute the hash code for the fileStream
+Dim bytesToHash() As Byte = Encryptor.ComputeHash(fileStream)
+ 
+' Close the fileStream
+fileStream.Close()
+
+' Convert the hash bytes to user-friendly text
+For Each item As Byte In bytesToHash
+Result += item.ToString("x2")
+Next
+
+End Sub
